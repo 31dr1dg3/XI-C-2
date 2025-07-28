@@ -1,0 +1,259 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, darkgoldenrod 0%, bisque 100%);
+    color: #ffffff;
+    padding: 2.5em 1em;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: rotateBackground 20s linear infinite;
+}
+
+@keyframes rotateBackground {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+
+h1 {
+    font-size: 2.8em;
+    margin-bottom: 0.2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.doa-reminder {
+    font-size: 1.1em;
+    font-style: italic;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 1em;
+}
+
+main {
+    padding: 2em;
+    max-width: 1200px;
+    margin: 2em auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+h2 {
+    color: #4a4a4a;
+    font-size: 2.2em;
+    border-bottom: 3px solid bisque;
+    padding-bottom: 0.5em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-bottom: 2em;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    background-color: #fdfdfd;
+}
+
+table th, table td {
+    padding: 14px 18px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    transition: background-color 0.3s ease;
+}
+
+table th {
+    background-color: #e6e6fa; /* Light purple */
+    color: #4a4a4a;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table td:hover {
+    background-color: #eef;
+}
+
+.istirahat {
+    background-color: #ffd700 !important; /* Gold for breaks */
+    font-weight: 700;
+    color: #333;
+    animation: pulseBreak 2s infinite;
+}
+
+@keyframes pulseBreak {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+#daftar-guru ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1em;
+}
+
+#daftar-guru li {
+    background-color: #f0f8ff; /* Alice Blue */
+    border: 1px solid #dcdcdc;
+    padding: 1.2em 1.5em;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+#daftar-guru li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+#daftar-guru li::before {
+    content: '📚'; /* Book emoji */
+    margin-right: 0.8em;
+    font-size: 1.2em;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5em;
+    margin-top: 3em;
+    background-color: #333;
+    color: #ffffff;
+    font-size: 0.9em;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    main {
+        padding: 1em;
+        margin: 1em auto;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    table th, table td {
+        padding: 10px 12px;
+        font-size: 0.85em;
+    }
+
+    #daftar-guru ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.6em;
+    }
+
+    .doa-reminder {
+        font-size: 0.9em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    table th, table td {
+        padding: 8px;
+        font-size: 0.75em;
+    }
+}
+
+/* ... (kode CSS yang sudah ada) ... */
+
+.header-button-link {
+    display: inline-block;
+    background-color: #ffffff; /* Latar belakang putih */
+    color: darkgoldenrod; /* Warna teks ungu dari header */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px; /* Jarak dari elemen di atasnya */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.header-button-link:hover {
+    background-color: #e0f0ff; /* Biru sangat muda saat hover */
+    color: #2575fc; /* Biru terang saat hover */
+    transform: translateY(-2px);
+}
+
+/* ... (CSS yang sudah ada) ... */
+
+.sub-judul-kelas {
+    font-size: 1.5em; /* Ukuran font yang sesuai */
+    font-weight: 600; /* Sedikit tebal */
+    color: #f0f0f0; /* Warna teks yang kontras dengan latar belakang header */
+    margin-top: -10px; /* Sedikit naik agar dekat dengan judul utama */
+    margin-bottom: 15px; /* Jarak dengan elemen di bawahnya */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Penyesuaian untuk tampilan responsif */
+@media (max-width: 768px) {
+    .sub-judul-kelas {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .sub-judul-kelas {
+        font-size: 1em;
+    }
+}
